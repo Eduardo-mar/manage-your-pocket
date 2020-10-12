@@ -1,5 +1,5 @@
 # manage-your-pocket
-12/10/20 - **Records.
+12/10/20 - **Records.**
 
 In this update I have entered the records. 
 
