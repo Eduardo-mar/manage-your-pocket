@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Type = mongoose.model('Type');
-const Account = mongoose.model('Account');
+require('../models/type');
+require('../models/account');
 
 
 const Record = new Schema({
@@ -10,12 +10,12 @@ const Record = new Schema({
         required: true,
     },
     type: {
-        type: Schema.ObjectId,
+        type: Number,
         ref: 'Type',
     },
     concept: String,
     account: {
-        type: Schema.ObjectId,
+        type: Number,
         ref: 'Account',
     },
     amount: {

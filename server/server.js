@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const types = require('./routes/types');
 const accounts = require('./routes/accounts');
+const records = require('./routes/records');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,10 +15,11 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(records);
 app.use(types);
 app.use(accounts);
 
-mongoose.connect('mongodb://localhost/manageYourPocket', { useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
+mongoose.connect('mongodb://localhost/manageYourPocket', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, (err, res) => {
     if (err) {
         console.log('ERROR: connecting to Database. ' + err);
     }
