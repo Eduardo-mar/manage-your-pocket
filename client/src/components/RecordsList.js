@@ -81,6 +81,7 @@ class RecordsList extends Component {
                             date: undefined,
                             type: '',
                             concept: '',
+                            place: '',
                             account: '',
                             valuesNumberFormat: {
                                 numberformat: undefined,
@@ -104,6 +105,7 @@ class RecordsList extends Component {
                             date={element.date}
                             type={element.type}
                             concept={element.concept}
+                            place={element.place}
                             account={element.account}
                             amount={element.amount} />
                     ))

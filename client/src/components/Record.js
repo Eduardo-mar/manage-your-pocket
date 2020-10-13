@@ -35,6 +35,7 @@ class Record extends Component {
             date: props.date,
             type: props.type,
             concept: props.concept,
+            place: props.place,
             account: props.account,
             valuesNumberFormat: {
                 numberformat: props.amount,
@@ -114,6 +115,12 @@ class Record extends Component {
                     <FormHelperText>Can't find your Account? You can add more!</FormHelperText>
                 </FormControl>
 
+                <TextField label="Place" value={this.state.place} onChange={(place) => {
+                    place.persist();
+                    console.log(place.target.value);
+                    this.setState({ place: place.target.value })
+                }} />
+
                 <TextField
                     className="amount"
                     label="Amount"
@@ -138,6 +145,7 @@ class Record extends Component {
                         date: this.state.date,
                         type: this.state.type,
                         concept: this.state.concept,
+                        place: this.state.place,
                         account: this.state.account,
                         amount: this.state.valuesNumberFormat.numberformat,
                     })
@@ -162,6 +170,7 @@ Record.propTypes = {
     _id: PropTypes.string,
     date: PropTypes.string,
     concept: PropTypes.string,
+    place: PropTypes.string,
     type: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,

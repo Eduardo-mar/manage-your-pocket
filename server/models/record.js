@@ -18,6 +18,7 @@ const Record = new Schema({
         type: Number,
         ref: 'Account',
     },
+    place: String,
     amount: {
         type: Number,
         required: true,
