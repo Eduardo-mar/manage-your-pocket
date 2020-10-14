@@ -5,6 +5,21 @@ const app = express();
 const types = require('./routes/types');
 const accounts = require('./routes/accounts');
 const records = require('./routes/records');
+// var admin = require('firebase-admin');
+
+// var serviceAccount = require("path/to/serviceAccountKey.json");
+
+// admin.initializeApp({
+//     credential: admin.credential.applicationDefault(),
+//     databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+// });
+
+// var refreshToken; // Get refresh token from OAuth2 flow
+
+// admin.initializeApp({
+//     credential: admin.credential.refreshToken(refreshToken),
+//     databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+// });
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,7 +34,7 @@ app.use(records);
 app.use(types);
 app.use(accounts);
 
-mongoose.connect('mongodb://localhost/manageYourPocket', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, (err, res) => {
+mongoose.connect('mongodb://localhost/manageYourPocket', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, (err, res) => {
     if (err) {
         console.log('ERROR: connecting to Database. ' + err);
     }
