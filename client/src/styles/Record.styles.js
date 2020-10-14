@@ -1,33 +1,46 @@
 
 const styles = props => {
     return `
-
+    width: 100%;
+    justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-bottom: 2rem;
 
-    .Delete{
+    .save{
 
-        height: 3rem;
+        color: #32CD32;
+    
     }
-    .Save{
-        
-        background: #32CD32;
-        height: 3rem;
+    .Save:hover {
+
+        background-color: rgba(50, 250, 50, 0.14);
     }
 
     .date{
 
-        max-width: 140px;
+        width: 140px;
+    }
+    .type{
+
+        width: 150px;
     }
     .amount{
 
-        max-width: 75px;
+        width: 75px;
+    }
+    .account{
+
+        width: 130px;
+    }
+    .text{
+
+        width:150px;
     }
     >div {
 
-        margin: 0 0.5rem;
+        margin: 0 1.5rem;
         width: 100%;
         max-width: 200px;
     }
